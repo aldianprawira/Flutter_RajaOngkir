@@ -24,8 +24,8 @@ class HomeView extends GetView<HomeController> {
           padding: const EdgeInsets.all(30),
           children: [
             DropdownSearch<Province>(
-              // validator: (value) => value == null ? 'wajib diisi' : null,
-              // autoValidateMode: AutovalidateMode.always,
+              validator: (value) => value == null ? 'wajib diisi' : null,
+              autoValidateMode: AutovalidateMode.onUserInteraction,
               asyncItems: (text) async {
                 var response = await Dio().get(
                   "https://api.rajaongkir.com/starter/province",
@@ -59,6 +59,8 @@ class HomeView extends GetView<HomeController> {
             ),
             const SizedBox(height: 30),
             DropdownSearch<City>(
+              validator: (value) => value == null ? 'wajib diisi' : null,
+              autoValidateMode: AutovalidateMode.onUserInteraction,
               asyncItems: (text) async {
                 var response = await Dio().get(
                   "https://api.rajaongkir.com/starter/city?province=${controller.idProvAsal}",
@@ -92,6 +94,8 @@ class HomeView extends GetView<HomeController> {
             ),
             const SizedBox(height: 30),
             DropdownSearch<Province>(
+              validator: (value) => value == null ? 'wajib diisi' : null,
+              autoValidateMode: AutovalidateMode.onUserInteraction,
               asyncItems: (text) async {
                 var response = await Dio().get(
                   "https://api.rajaongkir.com/starter/province",
@@ -125,6 +129,8 @@ class HomeView extends GetView<HomeController> {
             ),
             const SizedBox(height: 30),
             DropdownSearch<City>(
+              validator: (value) => value == null ? 'wajib diisi' : null,
+              autoValidateMode: AutovalidateMode.onUserInteraction,
               asyncItems: (text) async {
                 var response = await Dio().get(
                   "https://api.rajaongkir.com/starter/city?province=${controller.idProvTujuan}",
@@ -174,6 +180,8 @@ class HomeView extends GetView<HomeController> {
             ),
             const SizedBox(height: 30),
             DropdownSearch<Map<String, dynamic>>(
+              validator: (value) => value == null ? 'wajib diisi' : null,
+              autoValidateMode: AutovalidateMode.onUserInteraction,
               items: const [
                 {
                   "code": "jne",
